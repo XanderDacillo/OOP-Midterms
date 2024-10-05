@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class MidtermsSept7{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter number of students: ");
+        int numStudents = sc.nextInt();
+
+        System.out.print("Enter number of subjects: ");
+        int numSubjects = sc.nextInt();
+
+        StudentGrade studdGrade = new StudentGrade(numStudents, numSubjects);
+
+        sc.nextLine();
+        studdGrade.enterSubjectNames();
+        
+
+        for (int i = 0; i < numStudents; i++){
+            System.out.println();
+            studdGrade.enterStudentInfo(i);
+        }
+
+        System.out.println();
+        studdGrade.displayGrades();
+
+        System.out.print("Average Grades: ");
+        studdGrade.calculateAverage(StudentGrade);
+
+        sc.close();
+    }
+    
+}
