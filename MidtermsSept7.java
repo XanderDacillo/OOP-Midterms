@@ -73,8 +73,14 @@ public class MidtermsSept7 {
                     }
                     break;
                 case 6:
-                    studdGrade.searchForName(null, args);
+
+                    if (studdGrade != null) {
+                        studdGrade.searchForName(null, studdGrade.getStudentNames()); // Call the updated searchForName method
+                    } else {
+                        System.out.println("Please input grades first.");
+                    }
                     break;
+                
                 case 7:
                     System.out.println("EXITING......");
                     exit = true;
