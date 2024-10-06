@@ -6,7 +6,8 @@ public class MidtermsSept7 {
         int numStudents = 0;
         int numSubjects = 0;
         boolean exit = false;
-        Student studdGrade = new Student(numStudents, numSubjects);
+
+        GradingSystem studdGrade = new GradingSystem(numStudents, numSubjects);
 
         while (!exit) {
             System.out.println("*******GRADING SYSTEM********");
@@ -30,7 +31,7 @@ public class MidtermsSept7 {
                     numSubjects = sc.nextInt();
                     sc.nextLine();
 
-                    studdGrade = new Student(numStudents, numSubjects);
+                    studdGrade = new GradingSystem(numStudents, numSubjects);
                     studdGrade.enterSubjectNames();
 
                     for (int i = 0; i < numStudents; i++) {
@@ -44,28 +45,46 @@ public class MidtermsSept7 {
                     if (studdGrade != null) {
                         int studentIndex = 0;
                         studdGrade.updateGrades(studentIndex);
+                        System.out.println();
                     } else {
                         System.out.println("Please input grades first.");
                     }
                     break;
                 case 3:
+                System.out.println();
                     if (studdGrade != null) {
                         studdGrade.enterNewSubject();
+                        System.out.println();
                     } else {
                         System.out.println("Please input grades first.");
                     }
                     break;
                 case 4:
+                System.out.println();
+                /* 
                     if (studdGrade != null) {
                         System.out.println("****Grades Averages****");
                         studdGrade.displayGrades();
+
                     } else {
                         System.out.println("NO GRADES FOUND. Please input grades first.");
                     }
                     break;
-                case 5:
+                */
                     if (studdGrade != null) {
-                        System.out.println("****Ranking*****");
+                        System.out.println("****Grades Averages and Subject Stats****");
+                        studdGrade.displayGrades();
+                        studdGrade.displayHILOGrades();
+                    } else {
+                        System.out.println("NO GRADES FOUND. Please input grades first.");
+                    }
+                    break;
+
+                case 5:
+                System.out.println();
+                    if (studdGrade != null) {
+                        System.out.println("****Ranking*****");        
+                        System.out.println("***********************************************");
                         studdGrade.displayRanking(numStudents, numSubjects, null);
                         System.out.println();
                     } else {
@@ -73,15 +92,14 @@ public class MidtermsSept7 {
                     }
                     break;
                 case 6:
-
+                    System.out.println();
                     if (studdGrade != null) {
-                        studdGrade.searchForName(null, studdGrade.getStudentNames()); // Call the updated searchForName method
-                    } else {
-                        System.out.println("Please input grades first.");
+                        studdGrade.searchForName(null, studdGrade.getStudentNames());
                     }
                     break;
                 
                 case 7:
+                System.out.println();
                     System.out.println("EXITING......");
                     exit = true;
                     break;
