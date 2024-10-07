@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class MidtermsSept7 {
+public class MidtermsOct7 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int numStudents = 0;
